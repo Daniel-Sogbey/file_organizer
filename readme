@@ -1,0 +1,73 @@
+# File Organizer
+
+## Overview
+This is a simple command-line tool written in **Go** that organizes files in a given directory by their extensions. It automatically creates categorized subdirectories and moves files into their respective folders based on their types.
+
+## Features
+- Scans a directory for files
+- Organizes files by their extensions
+- Creates a unique directory for organized files
+- Handles duplicate directory names safely
+
+## Installation
+To use this tool, you need to have **Go installed**. If you haven't installed Go yet, follow the instructions [here](https://go.dev/doc/install).
+
+Clone the repository and navigate into the project folder:
+```sh
+$ git clone https://github.com/yourusername/file-organizer.git
+$ cd file-organizer
+```
+
+Build the project:
+```sh
+$ go build -o file-organizer
+```
+
+## Usage
+Run the program using the following command:
+```sh
+$ ./file-organizer -dir /path/to/directory
+```
+For example:
+```sh
+$ ./file-organizer -dir ~/Downloads
+```
+
+### Expected Behavior
+- The script generates a unique folder inside the target directory (e.g., `XK23J9_organized`)
+- Subdirectories for different file types are created (e.g., `pdf`, `jpg`, `txt`)
+- Files are moved into the appropriate subdirectories
+
+## Example
+### Before:
+```
+Downloads/
+├── document.pdf
+├── image.jpg
+├── script.py
+```
+### After Running:
+```
+Downloads/
+├── XK23J9_organized/
+│   ├── pdf/
+│   │   ├── document.pdf
+│   ├── jpg/
+│   │   ├── image.jpg
+│   ├── py/
+│   │   ├── script.py
+```
+
+## Error Handling
+- If the directory does not exist, an error will be displayed.
+- If permissions are insufficient, an error will be logged.
+- If a file with the same name exists in the new directory, it will **not** be overwritten.
+
+## Future Enhancements
+- Add logging for better debugging
+- Implement file **moving** instead of **creating empty files**
+- Add support for **custom file organization rules**
+- Add **multi-threading** for large directories
+
+## License
+This project is open-source under the MIT License. Feel free to modify and improve it!
