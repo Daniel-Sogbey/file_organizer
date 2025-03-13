@@ -43,7 +43,7 @@ $ file_organizer -dir ~/Downloads
 
 ### Expected Behavior
 - The script generates a unique folder inside the target directory (e.g., `XK23J9_organized`)
-- Subdirectories for different file types are created (e.g., `pdf`, `jpg`, `txt`)
+- Subdirectories for different file types are created (e.g., `pdf`, `images`, `txt`)
 - Files are moved into the appropriate subdirectories
 
 ## Example
