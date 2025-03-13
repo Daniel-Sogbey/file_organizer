@@ -20,7 +20,7 @@ $ cd file-organizer
 
 ## Build the project:
 ```sh
-$ go build -o file-organizer
+$ go build -o file_organizer
 ```
 
 ## Installation
