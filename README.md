@@ -60,8 +60,9 @@ Downloads/
 ├── XK23J9_organized/
 │   ├── pdf/
 │   │   ├── document.pdf
-│   ├── jpg/
-│   │   ├── image.jpg
+│   ├── images/
+│   │   ├── id_card.jpg
+│   │   ├── avatar.png
 │   ├── py/
 │   │   ├── script.py
 ```
