@@ -18,6 +18,8 @@ func organizeFiles(dir string) error {
 
 	newDir = filepath.Join(dir, fmt.Sprintf("%s_organized", newDir))
 
+	images := []string{"jpg", "png", "jpeg"}
+
 	for {
 		if _, err := os.Stat(newDir); os.IsNotExist(err) {
 
@@ -34,7 +36,7 @@ func organizeFiles(dir string) error {
 		return err
 	}
 
-	var uniqueExtentions []string
+	uniqueExtentions := make(map[string]bool)
 
 	for _, file := range entries {
 		if file.IsDir() {
@@ -44,12 +46,19 @@ func organizeFiles(dir string) error {
 		path := filepath.Join(dir, file.Name())
 		extension := getExtension(path)
 
-		if extension != "" && !slices.Contains(uniqueExtentions, extension) {
-			uniqueExtentions = append(uniqueExtentions, extension)
+		if extension != "" {
+			if slices.Contains(images, extension) {
+				extension = "images"
+			}
+
+			uniqueExtentions[extension] = true
+
 		}
 	}
 
-	for _, ext := range uniqueExtentions {
+	// fmt.Println(uniqueExtentions)
+
+	for ext := range uniqueExtentions {
 		path := filepath.Join(newDir, ext)
 		err = os.Mkdir(path, 0755)
 		if err != nil {
@@ -62,7 +71,7 @@ func organizeFiles(dir string) error {
 		return err
 	}
 
-	for _, organizedDir := range newOrganizedDir {
+	for _, organizedDir := range newOrganizedDir[2:6] {
 		for _, file := range entries {
 
 			if file.IsDir() {
@@ -72,6 +81,10 @@ func organizeFiles(dir string) error {
 			ext := getExtension(filepath.Join(dir, file.Name()))
 
 			newDirName := strings.TrimSuffix(organizedDir.Name(), "/")
+
+			if slices.Contains(images, ext) {
+				ext = "images"
+			}
 
 			if ext == newDirName {
 				_, err := os.Create(filepath.Join(newDir, ext, filepath.Base(file.Name())))

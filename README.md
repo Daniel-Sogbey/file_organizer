@@ -23,14 +23,22 @@ Build the project:
 $ go build -o file-organizer
 ```
 
+Installation
+
+To install the latest version of the File Organizer, run:
+
+```sh
+$ go install github.com/Daniel-Sogbey/file_organizer@latest
+```
+
 ## Usage
 Run the program using the following command:
 ```sh
-$ ./file-organizer -dir /path/to/directory
+$ file_organizer -dir /path/to/directory
 ```
 For example:
 ```sh
-$ ./file-organizer -dir ~/Downloads
+$ file_organizer -dir ~/Downloads
 ```
 
 ### Expected Behavior
