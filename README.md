@@ -23,7 +23,7 @@ Build the project:
 $ go build -o file-organizer
 ```
 
-Installation
+## Installation
 
 To install the latest version of the File Organizer, run:
 
