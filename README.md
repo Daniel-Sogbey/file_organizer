@@ -9,8 +9,8 @@ This is a simple command-line tool written in **Go** that organizes files in a g
 - Creates a unique directory for organized files
 - Handles duplicate directory names safely
 
-## Installation
-To use this tool, you need to have **Go installed**. If you haven't installed Go yet, follow the instructions [here](https://go.dev/doc/install).
+## Run the project
+To run this project, you need to have **Go installed**. If you haven't installed Go yet, follow the instructions [here](https://go.dev/doc/install).
 
 Clone the repository and navigate into the project folder:
 ```sh
@@ -18,7 +18,7 @@ $ git clone https://github.com/yourusername/file-organizer.git
 $ cd file-organizer
 ```
 
-Build the project:
+## Build the project:
 ```sh
 $ go build -o file-organizer
 ```
